@@ -10,4 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftprintf.h"
 
+int	ft_printf_u(unsigned int u)
+{
+	int	i;
+	unsigned int	unbr;
+	char	str[11];
+
+	i = 0;
+	unbr = u;
+	while (unbr)
+	{
+		str[i] = (unbr % 10);
+		unbr /= 10;
+		i++;
+	}
+	unbr = (unsigned int) i--;
+	while (i >= 0)
+	{
+		ft_putnbr_fd(str[i], 1);
+		i--;
+	}
+	return ((int)unbr);
+}

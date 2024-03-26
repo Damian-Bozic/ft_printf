@@ -6,7 +6,7 @@
 /*   By: dbozic <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:34:26 by dbozic            #+#    #+#             */
-/*   Updated: 2024/03/13 17:38:55 by dbozic           ###   ########.fr       */
+/*   Updated: 2024/03/26 18:40:35 by dbozic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	ft_putstr_fd(char *str, int fd)
 {
 	size_t	i;
-
+	
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i])
 	{
 		ft_putchar_fd(str[i], fd);

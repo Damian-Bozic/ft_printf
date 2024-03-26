@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftprintf.h"
 
+int	ft_printf_d(int	d)
+{
+	int	i;
+	int	nbr;
+
+	i = 0;
+	nbr = d;
+	ft_putnbr_fd(nbr, 1);
+	while (nbr)
+	{
+		nbr = nbr / 10;
+		i++;
+	}
+	write(1, "\n", 1);
+	ft_putnbr_fd(i, 1);
+	return (i);
+}
