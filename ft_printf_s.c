@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libftprintf.h"
+#include "libftprintf.h"
 
 int	ft_printf_s(char *str)
 {
@@ -19,8 +19,7 @@ int	ft_printf_s(char *str)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	else 
+	else
 		ft_putstr_fd(str, 1);
-
 	return (ft_strlen(str));
 }

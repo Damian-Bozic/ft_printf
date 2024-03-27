@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-static char	intdec_to_hexchar(int	i)
+static char	intdec_to_hexchar(int i)
 {
 	if (i >= 0 && i <= 9)
 		i = i + '0';
@@ -41,6 +41,6 @@ int	ft_printf_p(void *ptr)
 	}
 	temp = ft_strlen(output) + 2;
 	while (i--)
-			ft_putchar_fd(output[i], 1);
+		ft_putchar_fd(output[i], 1);
 	return (temp);
 }

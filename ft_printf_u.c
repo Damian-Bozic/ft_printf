@@ -14,9 +14,9 @@
 
 int	ft_printf_u(unsigned int u)
 {
-	int	i;
+	int				i;
 	unsigned int	unbr;
-	char	str[11];
+	char			str[11];
 
 	i = 0;
 	unbr = u;
