@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbozic <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 12:50:23 by dbozic            #+#    #+#             */
-/*   Updated: 2024/03/01 18:17:21 by dbozic           ###   ########.fr       */
+/*   Created: 2024/03/13 17:22:38 by dbozic            #+#    #+#             */
+/*   Updated: 2024/03/13 17:33:32 by dbozic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	ft_isalnum(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if ((c >= 65 && c <= 90)
-		|| (c >= 97 && c <= 122)
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
+	write(fd, &c, 1);
 }
 
 /*int	main(void)
 {
-	#include <ctype.h>
-	int	i;
-	char	c;
-
-	i = 2;
-	c = '+';
-	i = ft_isalnum(c);
-	db_printint(i);
-
-	i = 2;
-	c = '+';
-	i = isalnum(c);
-	db_printint(i);
+	ft_putchar_fd('c', 1);
 }*/
-//Value returned is nonzero if c falls into the tested class

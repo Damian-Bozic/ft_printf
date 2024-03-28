@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbozic <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 18:21:34 by dbozic            #+#    #+#             */
-/*   Updated: 2024/02/27 18:29:27 by dbozic           ###   ########.fr       */
+/*   Created: 2024/03/13 17:34:26 by dbozic            #+#    #+#             */
+/*   Updated: 2024/03/27 17:28:23 by dbozic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	ft_toupper(int c)
+void	ft_putstr_fd(char *str, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
+	{
+		ft_putchar_fd(str[i], fd);
+		i++;
+	}
 }
 
 /*int	main(void)
 {
-	#include <ctype.h>
-	char b = '0';
-	char c = '0';
-	c = ft_toupper(c);
-	write(1, &c,1);
-	write(1, "\n", 1);
-	b = toupper(b);
-	write(1, &b, 1);
+	char	str[] = "This is unnervingly easly";
+	ft_putstr_fd(str, 1);
 }*/

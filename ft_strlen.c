@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbozic <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 13:15:12 by dbozic            #+#    #+#             */
-/*   Updated: 2024/02/27 13:20:59 by dbozic           ###   ########.fr       */
+/*   Created: 2024/02/27 13:57:26 by dbozic            #+#    #+#             */
+/*   Updated: 2024/03/26 18:42:09 by dbozic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isascii(int c)
+#include "libftprintf.h"
+
+size_t	ft_strlen(const char *str)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
+	size_t	i;
+
+	i = 0;
+	if (!str)
 		return (0);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
+
 /*int	main(void)
 {
-#include <ctype.h>
+#include <string.h>
 #include <stdio.h>
 	int	i;
-	char	c;
+	char	str[] = "If I had to guess this should work.";
 
-	c = 127;
 	i = 2;
-	i = ft_isascii(c);
+	i = ft_strlen(str);
 	//db_printint(i);
 	printf("%d", i);
 
-	c = 127;
 	i = 2;
-	i = isascii(c);
+	i = strlen(str);
 	//db_printint(i);
 	printf("\n%d", i);
 }*/
-//Value returned is nonzero if c falls into the tested class

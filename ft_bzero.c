@@ -1,50 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbozic <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 12:50:23 by dbozic            #+#    #+#             */
-/*   Updated: 2024/02/27 13:55:38 by dbozic           ###   ########.fr       */
+/*   Created: 2024/03/04 12:41:46 by dbozic            #+#    #+#             */
+/*   Updated: 2024/03/05 17:09:30 by dbozic           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libftprintf.h"
+
+void	ft_bzero(void *str, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (n-- > 0)
+	{
+		((char *)str)[i] = '\0';
+		i++;
+	}
 }
 
 /*int	main(void)
 {
-#include <ctype.h>
+#include <string.h>
 #include <stdio.h>
-	int	i;
-	int	j;
+	int		i;
+	int		size;
+	char	c;
+	char	str1[] = "If I had to guess this should work.";
+	char	str2[] = "If I had to guess this should work.";
 
+	size = 12;
+
+	ft_bzero(str1, size);
 	i = 0;
-	j = 2;
-	while (i <= 127)
+	while (i < 40)
 	{
-	if (ft_isprint(i) == 0)
-		printf("0");
-	else
-		printf("1");
-	i++;
+		c = str1[i];
+		write(1, &c, 1);
+		i++;
 	}
 
-	printf("\n\n");
+	write(1, "\n", 1);
+	bzero(str2, size);
 	i = 0;
-	while (i <= 127)
+	while (i < 40)
 	{
-	if (isprint(i) == 0)
-		printf("0");
-	else
-		printf("1");
-	i++;
+		c = str2[i];
+		write(1, &c, 1);
+		i++;
 	}
 }*/
-//Value returned is nonzero if c falls into the tested class

@@ -66,18 +66,20 @@ int	ft_printf(const char *str, ...)
 /* int main(void)
 {
 	#include "stdio.h"
-	int	j = 0;
+	int	j;
 	void *ptr = &j;
 
-
-	j = ft_printf("%sidk%c%d%x%X%%%p", "well ", 't', -1200, 1200, -1200, ptr);
+	j = 0;
+	j = ft_printf("a\0l");
 	printf("\n%d\n", j);
-	j = printf("%sidk%c%d%x%X%%%p", "well ", 't', -1200, 1200, -1200, ptr);
+
+	j = 0;
+	j = printf("a\0l");
 	printf("\n%d", j);
 }  */
-// if NULL is found in string have it print (null)
-// %d assumes base 10 while %i autodetects the base 012
-// Base 10 if the number doesn’t start with 0 or 0x.
+
+// %d assumes base 10 while %i autodetects other bases
+// Base 10 if a number that doesn’t start with 0 or 0x.
 // Base 8 (octal) if the number starts with 0.
 // Base 16 (hexadecimal) if the number starts with 0x or 0X.
 // test for %%d

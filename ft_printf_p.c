@@ -21,14 +21,22 @@ static char	intdec_to_hexchar(int i)
 	return ((char)i);
 }
 
+static int	printnil(void)
+{
+	write(1, "(nil)", 5);
+	return (5);
+}
+
 int	ft_printf_p(void *ptr)
 {
 	int				i;
 	unsigned long	address;
 	int				temp;
-	char			output[20];
+	char			output[21];
 
 	i = 0;
+	if (!ptr)
+		return (printnil());
 	address = (unsigned long)ptr;
 	ft_bzero(output, 20);
 	write(1, "0x", 2);

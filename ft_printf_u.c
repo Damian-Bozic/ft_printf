@@ -20,6 +20,11 @@ int	ft_printf_u(unsigned int u)
 
 	i = 0;
 	unbr = u;
+	if (!u)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	while (unbr)
 	{
 		str[i] = (unbr % 10);
@@ -28,9 +33,6 @@ int	ft_printf_u(unsigned int u)
 	}
 	unbr = (unsigned int) i--;
 	while (i >= 0)
-	{
-		ft_putnbr_fd(str[i], 1);
-		i--;
-	}
+		ft_putnbr_fd(str[i--], 1);
 	return ((int)unbr);
 }
